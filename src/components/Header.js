@@ -1,0 +1,53 @@
+const Header = ({ weatherLocation }) => {
+  const dateSetter = (d) => {
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    let months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    let day = days[d.getDay()];
+    let date = d.getDate();
+    let month = months[d.getMonth()];
+    let year = d.getFullYear();
+
+    return `${day} ${date} ${month}, ${year}`;
+  };
+
+  return (
+    <header>
+      {typeof weatherLocation.data != "undefined" ? (
+        <div>
+          <h1 className="location">
+            {weatherLocation.data[0].city_name},{" "}
+            {weatherLocation.data[0].country_code}
+          </h1>
+          <p className="date">{dateSetter(new Date())}</p>
+        </div>
+      ) : (
+        ""
+      )}
+    </header>
+  );
+};
+
+export default Header;
