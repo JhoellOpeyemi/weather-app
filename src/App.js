@@ -46,7 +46,7 @@ function App() {
   };
 
   // Event Listeners
-  window.addEventListener("DOMContentLoaded", getWeather);
+  window.addEventListener("load", getWeather);
 
   const openSearch = () => {
     document.querySelector(".search-location").classList.add("open");
