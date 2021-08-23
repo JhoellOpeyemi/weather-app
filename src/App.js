@@ -12,6 +12,20 @@ function App() {
     base: "https://api.weatherbit.io/v2.0/current",
   };
 
+  const searchWeather = (evt) => {
+    if (evt.key === "Enter") {
+      fetch(`${api.base}?city=${query}&key=${api.key}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setWeather(data);
+          setQuery("");
+          console.log(data);
+        });
+
+      document.querySelector(".search-location").classList.remove("open");
+    }
+  };
+
   const getWeather = () => {
     let lon;
     let lat;
@@ -28,20 +42,6 @@ function App() {
             setWeather(data);
           });
       });
-    }
-  };
-
-  const searchWeather = (evt) => {
-    if (evt.key === "Enter") {
-      fetch(`${api.base}?city=${query}&key=${api.key}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setWeather(data);
-          setQuery("");
-          console.log(data);
-        });
-
-      document.querySelector(".search-location").classList.remove("open");
     }
   };
 
