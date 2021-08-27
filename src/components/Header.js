@@ -1,4 +1,5 @@
 const Header = ({ weatherLocation }) => {
+  // create dateSetter function with days and months as arrays
   const dateSetter = (d) => {
     let days = [
       "Sunday",
@@ -25,11 +26,13 @@ const Header = ({ weatherLocation }) => {
       "December",
     ];
 
+    // set the date
     let day = days[d.getDay()];
     let date = d.getDate();
     let month = months[d.getMonth()];
     let year = d.getFullYear();
 
+    // return date in format - dd mm yy
     return `${day} ${date} ${month}, ${year}`;
   };
 

@@ -68,7 +68,7 @@ function App() {
           type="text"
           name="search"
           className="search-location-input"
-          placeholder="Type location and press Enter"
+          placeholder="City, Country Code"
           onChange={(e) => setQuery(e.target.value)}
           value={query}
           onKeyPress={searchWeather}

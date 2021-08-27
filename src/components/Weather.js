@@ -1,11 +1,18 @@
 const Weather = ({ weather }) => {
+  // If typeof weather.data is not equal to undefined, get weather icon code
+  let iconCode;
+  if (typeof weather.data != "undefined") {
+    iconCode = weather.data[0].weather.icon;
+  }
+
   return (
     <main>
       {typeof weather.data != "undefined" ? (
         <div className="weather-details">
           <div className="temperature-group">
             <img
-              src="./../assets/c04n.png"
+              // set img src based on weather icon code from above
+              src={`https://www.weatherbit.io/static/img/icons/${iconCode}.png`}
               alt="temperature icon"
               className="temperature-img"
             />
