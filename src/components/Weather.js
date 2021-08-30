@@ -1,8 +1,15 @@
 const Weather = ({ weather }) => {
   // If typeof weather.data is not equal to undefined, get weather icon code
-  let iconCode;
-  if (typeof weather.data != "undefined") {
-    iconCode = weather.data[0].weather.icon;
+
+  function wordCount(str) {
+    let word;
+    const wordLength = str.split(" ").length;
+    if (wordLength > 2) {
+      word = str.split(" ").slice(0, 1).join(" ");
+    } else {
+      return str;
+    }
+    return word;
   }
 
   return (
@@ -12,16 +19,18 @@ const Weather = ({ weather }) => {
           <div className="temperature-group">
             <img
               // set img src based on weather icon code from above
-              src={`https://www.weatherbit.io/static/img/icons/${iconCode}.png`}
+              src={`https://www.weatherbit.io/static/img/icons/${weather.data[0].weather.icon}.png`}
               alt="temperature icon"
               className="temperature-img"
             />
             <p className="temperature">
-              {Math.floor(weather.data[0].app_temp)}
+              {Math.round(weather.data[0].temp)}
               <span className="degree-sign">&deg;</span>
               <span className="degree-unit">C</span>
             </p>
-            <p className="desc">{weather.data[0].weather.description}</p>
+            <p className="desc">
+              {wordCount(weather.data[0].weather.description)}
+            </p>
           </div>
 
           <div className="other-details">

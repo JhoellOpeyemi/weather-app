@@ -41,8 +41,7 @@ const Header = ({ weatherLocation }) => {
       {typeof weatherLocation.data != "undefined" ? (
         <div>
           <h1 className="location">
-            {weatherLocation.data[0].city_name},{" "}
-            {weatherLocation.data[0].country_code}
+            {weatherLocation.city_name}, {weatherLocation.country_code}
           </h1>
           <p className="date">{dateSetter(new Date())}</p>
         </div>

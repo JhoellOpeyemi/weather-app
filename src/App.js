@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import Weather from "./components/Weather";
 import SearchButton from "./components/SearchButton";
+import DaysForecast from "./components/DaysForecast";
 
 function App() {
   const [weather, setWeather] = useState({});
@@ -9,17 +10,17 @@ function App() {
 
   const api = {
     key: "2c8c54799f4844dab268ab21925ec45e",
-    base: "https://api.weatherbit.io/v2.0/current",
+    base: "https://api.weatherbit.io/v2.0/forecast",
   };
 
   const searchWeather = (evt) => {
     if (evt.key === "Enter") {
-      fetch(`${api.base}?city=${query}&key=${api.key}`)
+      fetch(`${api.base}/daily?city=${query}&days=7&key=${api.key}`)
         .then((res) => res.json())
         .then((data) => {
           setWeather(data);
           setQuery("");
-          console.log(data);
+          // console.log(data);
         });
 
       document.querySelector(".search-location").classList.remove("open");
@@ -35,7 +36,7 @@ function App() {
         lon = position.coords.longitude;
         lat = position.coords.latitude;
 
-        fetch(`${api.base}?lat=${lat}&lon=${lon}&key=${api.key}`)
+        fetch(`${api.base}/daily?lat=${lat}&lon=${lon}&days=7&key=${api.key}`)
           .then((res) => res.json())
           .then((data) => {
             // console.log(data);
@@ -60,6 +61,7 @@ function App() {
     <div className="container">
       <Header weatherLocation={weather} />
       <Weather weather={weather} />
+      <DaysForecast daysForecast={weather} />
       <SearchButton openSearch={openSearch} />
       <div className="search-location">
         <i className="fas fa-chevron-left" onClick={closeSearch}></i>
