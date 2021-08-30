@@ -1,6 +1,6 @@
-const Weather = ({ weather }) => {
-  // If typeof weather.data is not equal to undefined, get weather icon code
+import OtherDetails from "./OtherDetails";
 
+const Weather = ({ weather }) => {
   function wordCount(str) {
     let word;
     const wordLength = str.split(" ").length;
@@ -33,17 +33,7 @@ const Weather = ({ weather }) => {
             </p>
           </div>
 
-          <div className="other-details">
-            <div className="other-details-group">
-              <h3>Wind Speed</h3>
-              <p>{weather.data[0].wind_spd.toFixed(1)} m/s</p>
-            </div>
-
-            <div className="other-details-group">
-              <h3>Humidity</h3>
-              <p>{Math.floor(weather.data[0].rh)}%</p>
-            </div>
-          </div>
+          <OtherDetails otherDetails={weather} />
         </div>
       ) : (
         ""
