@@ -58,16 +58,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 71%;
   margin: auto;
-  animation: tempAnimation 5s linear infinite alternate;
+  animation: tempAnimation 6s linear infinite alternate;
 }
 
 .temperature {
   font-size: 2.9rem;
   font-weight: 600;
   letter-spacing: 1px;
-  margin-top: -1.5rem;
+  margin-top: -0.3rem;
 }
 
 .desc {
