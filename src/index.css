@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-body {
+.container {
   background-image: var(--bg);
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -21,7 +21,7 @@ body {
   overflow-x: hidden;
 }
 
-.container {
+.wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -34,7 +34,7 @@ body {
 .location {
   font-size: 1.5rem;
   font-weight: 600;
-  margin: 2.7rem 0 1.2rem 0;
+  margin: 4.2rem 0 1.2rem 0;
   color: #fff;
 }
 
@@ -81,7 +81,7 @@ body {
   justify-content: space-between;
   flex-wrap: nowrap;
   margin-bottom: 2rem;
-  padding: 0 0.2rem 1rem 0.2rem;
+  padding: 0.5rem 0.2rem 1rem 0.2rem;
   overflow-x: scroll;
 }
 
@@ -132,13 +132,24 @@ body {
   color: #ddd;
 }
 
-.fa-search {
+.fa-search,
+.fa-sun,
+.fa-moon {
   position: absolute;
   top: 0;
-  left: 1.8rem;
   font-size: 1.8rem;
   margin-top: 2rem;
   cursor: pointer;
+}
+
+.fa-search {
+  top: 0;
+  left: 1.8rem;
+}
+
+.fa-sun,
+.fa-moon {
+  right: 1.8rem;
 }
 
 .fa-chevron-left {
@@ -241,4 +252,50 @@ body {
   to {
     transform: translateX(7%);
   }
+}
+
+/* Light Mode  */
+.container.light {
+  background: #fff;
+}
+
+.container.light .location,
+.container.light .temperature,
+.container.light .day-temp,
+.container.light .fa-search,
+.container.light .fa-moon,
+.container.light .fa-chevron-left,
+.container.light .days-weather-report h3,
+.container.light .other-details-group p,
+.container.light .search-location-title {
+  color: #222;
+}
+
+.container.light .date,
+.container.light .desc,
+.container.light .day-desc,
+.container.light .day {
+  color: #888;
+}
+
+.container.light .other-details::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.container.light .other-details-group {
+  background: rgba(137, 178, 255, 0.2);
+  box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.1);
+}
+
+.container.light .other-details-group h3,
+.container.light .details-group-unit {
+  color: #555;
+}
+
+.container.light .search-location {
+  background: #fff;
+}
+
+.container.light .search-location-input {
+  background: rgba(0, 0, 0, 0.1);
 }

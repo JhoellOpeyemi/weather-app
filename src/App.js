@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
 import Weather from "./components/Weather";
-import SearchButton from "./components/SearchButton";
 import DaysForecast from "./components/DaysForecast";
 
 function App() {
@@ -57,25 +56,44 @@ function App() {
     document.querySelector(".search-location").classList.remove("open");
   };
 
+  let num = 0;
+
+  const lightMode = () => {
+    document.querySelector(".container").classList.toggle("light");
+    num++;
+    if (num % 2 === 1) {
+      document.querySelector(".fa-sun").classList.replace("fa-sun", "fa-moon");
+    } else {
+      document.querySelector(".fa-moon").classList.replace("fa-moon", "fa-sun");
+    }
+  };
+
   return (
     <div className="container">
-      <Header weatherLocation={weather} />
-      <Weather weather={weather} />
-      <DaysForecast daysForecast={weather} />
-      <SearchButton openSearch={openSearch} />
-      <div className="search-location">
-        <i className="fas fa-chevron-left" onClick={closeSearch}></i>
-        <h2 className="search-location-title">Search Location</h2>
-        <input
-          type="text"
-          name="search"
-          className="search-location-input"
-          placeholder="City, Country Code"
-          onChange={(e) => setQuery(e.target.value)}
-          value={query}
-          onKeyPress={searchWeather}
-        />
-      </div>
+      {typeof weather.data != "undefined" ? (
+        <div className="wrapper">
+          <Header weatherLocation={weather} />
+          <Weather weather={weather} />
+          <DaysForecast daysForecast={weather} />
+          <i className="fas fa-search" onClick={openSearch}></i>
+          <i className="fas fa-sun" onClick={lightMode}></i>
+          <div className="search-location">
+            <i className="fas fa-chevron-left" onClick={closeSearch}></i>
+            <h2 className="search-location-title">Search Location</h2>
+            <input
+              type="text"
+              name="search"
+              className="search-location-input"
+              placeholder="City, Country Code"
+              onChange={(e) => setQuery(e.target.value)}
+              value={query}
+              onKeyPress={searchWeather}
+            />
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
