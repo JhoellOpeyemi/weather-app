@@ -70,6 +70,18 @@ function App() {
 
   return (
     <div className="container">
+      <p
+        className="location-alert"
+        style={
+          typeof weather.data == "undefined"
+            ? { display: "block", marginTop: "3rem" }
+            : { display: "none" }
+        }
+      >
+        {typeof weather.data == "undefined"
+          ? "To use this app, please turn on your location and refresh the page"
+          : ""}
+      </p>
       {typeof weather.data != "undefined" ? (
         <div className="wrapper">
           <Header weatherLocation={weather} />

@@ -284,7 +284,7 @@
 
 .container.light .other-details-group {
   background: rgba(137, 178, 255, 0.2);
-  box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .container.light .other-details-group h3,
@@ -298,4 +298,5 @@
 
 .container.light .search-location-input {
   background: rgba(0, 0, 0, 0.1);
+  color: #222;
 }
