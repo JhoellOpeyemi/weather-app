@@ -74,12 +74,12 @@ function App() {
         className="location-alert"
         style={
           typeof weather.data == "undefined"
-            ? { display: "block", marginTop: "3rem" }
+            ? { display: "block", marginTop: "3rem", padding: "2rem" }
             : { display: "none" }
         }
       >
         {typeof weather.data == "undefined"
-          ? "To use this app, please turn on your location and refresh the page"
+          ? "To use this app, make sure you're connected to the internet, then turn on your location and refresh the page"
           : ""}
       </p>
       {typeof weather.data != "undefined" ? (
