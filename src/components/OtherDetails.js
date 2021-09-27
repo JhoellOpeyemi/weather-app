@@ -1,6 +1,6 @@
 const OtherDetails = ({ otherDetails }) => {
   return (
-    <main>
+    <section>
       {typeof otherDetails.data != "undefined" ? (
         <div className="other-details">
           <div className="other-details-group">
@@ -44,6 +44,14 @@ const OtherDetails = ({ otherDetails }) => {
           </div>
 
           <div className="other-details-group">
+            <h3>Precipitation</h3>
+            <p>
+              {Math.floor(otherDetails.data[0].precip)}{" "}
+              <span className="details-group-unit"> mb</span>
+            </p>
+          </div>
+
+          <div className="other-details-group">
             <h3>Visibility</h3>
             <p>
               {Math.round(otherDetails.data[0].vis)}{" "}
@@ -54,7 +62,7 @@ const OtherDetails = ({ otherDetails }) => {
       ) : (
         ""
       )}
-    </main>
+    </section>
   );
 };
 

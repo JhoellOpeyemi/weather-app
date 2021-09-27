@@ -22,19 +22,20 @@
 }
 
 .wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   width: 96%;
-  max-width: 23rem;
+  max-width: 61rem;
   margin: 0 auto;
 }
 
 .location {
   font-size: 1.5rem;
   font-weight: 600;
-  margin: 4.2rem 0 1.2rem 0;
+  margin-bottom: 1.2rem;
   color: #fff;
 }
 
@@ -44,10 +45,11 @@
   font-style: italic;
 }
 
-.weather-details {
+.weather-details-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-top: 4.2rem;
 }
 
 .temperature-group {
@@ -115,7 +117,6 @@
 
 .other-details-group h3 {
   font-size: 1.1rem;
-  font-weight: 600;
   font-weight: 400;
   font-style: italic;
   margin-bottom: 1.7rem;
@@ -136,20 +137,18 @@
 .fa-sun,
 .fa-moon {
   position: absolute;
-  top: 0;
+  top: 0.2rem;
   font-size: 1.8rem;
-  margin-top: 2rem;
   cursor: pointer;
 }
 
 .fa-search {
-  top: 0;
-  left: 1.8rem;
+  left: 0.2rem;
 }
 
 .fa-sun,
 .fa-moon {
-  right: 1.8rem;
+  right: 0.2rem;
 }
 
 .fa-chevron-left {
@@ -169,7 +168,7 @@
   height: 100vh;
   padding: 7rem 1rem;
   transform: translateX(100%);
-  transition: 350ms all;
+  transition: transform 350ms ease;
   overflow-y: hidden;
 }
 
@@ -247,10 +246,10 @@
 
 @keyframes tempAnimation {
   from {
-    transform: translateX(-7%);
+    transform: translateX(-10%);
   }
   to {
-    transform: translateX(7%);
+    transform: translateX(10%);
   }
 }
 
@@ -298,5 +297,9 @@
 
 .container.light .search-location-input {
   background: rgba(0, 0, 0, 0.1);
+  color: #222;
+}
+
+.container.light .search-location-input::placeholder {
   color: #222;
 }

@@ -1,0 +1,156 @@
+/* Styles for screen more than 530px */
+@media screen and (min-width: 33.125rem) {
+  .weather-details-wrapper {
+    margin-top: 14rem;
+  }
+
+  .weather-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 5rem;
+  }
+
+  .location-details {
+    align-self: flex-end;
+  }
+
+  .location {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 0rem 0 2rem 0;
+  }
+
+  .date {
+    font-size: 1.2rem;
+  }
+
+  .temperature-group {
+    margin: 0;
+    text-align: center;
+  }
+
+  .temperature-img {
+    width: 120px;
+    margin: 0rem 0 1rem 0;
+  }
+
+  .temperature {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 0rem;
+  }
+
+  .desc {
+    font-size: 1.2rem;
+    display: none;
+  }
+
+  .other-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    place-items: center;
+    gap: 1.55rem;
+    overflow-x: hidden;
+  }
+
+  .other-details-group {
+    width: 100%;
+    height: 100%;
+  }
+
+  .other-details-group:not(:last-child) {
+    margin-right: 0rem;
+  }
+
+  .other-details-group h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    padding: 0 0.4rem;
+  }
+
+  .other-details-group p {
+    font-size: 1.5rem;
+  }
+
+  .details-group-unit {
+    font-size: 1.3rem;
+  }
+
+  .fa-search,
+  .fa-sun,
+  .fa-moon {
+    top: 1rem;
+    font-size: 2.3rem;
+  }
+
+  .fa-search {
+    display: none;
+  }
+
+  .fa-sun,
+  .fa-moon {
+    right: 0rem;
+  }
+
+  .fa-chevron-left {
+    display: none;
+  }
+
+  .search-location {
+    background: none;
+    background-image: none;
+    position: absolute;
+    top: 6.9rem;
+    height: 4rem;
+    padding: 0rem;
+    transform: translateX(0);
+  }
+
+  .search-location-title {
+    display: none;
+  }
+
+  .search-location-input {
+    width: 100%;
+    height: 100%;
+    font-size: 1.3rem;
+  }
+
+  .search-location-input::placeholder {
+    color: #ddd;
+    font-size: 1.25rem;
+  }
+
+  .days-weather-report {
+    margin-top: 2.5rem;
+  }
+
+  .days-weather-report h3 {
+    font-size: 1.55rem;
+    margin-bottom: 3.2rem;
+    color: #fff;
+  }
+
+  .days-list {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 15% 25% 45% 15%;
+    margin-bottom: 0.3rem;
+  }
+
+  .day-img {
+    width: 50%;
+  }
+
+  .day-desc {
+    font-size: 1.3rem;
+  }
+
+  .day-temp,
+  .day {
+    font-size: 1.3rem;
+  }
+}

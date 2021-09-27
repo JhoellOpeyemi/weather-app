@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Header from "./components/Header";
 import Weather from "./components/Weather";
 import DaysForecast from "./components/DaysForecast";
 
@@ -84,7 +83,6 @@ function App() {
       </p>
       {typeof weather.data != "undefined" ? (
         <div className="wrapper">
-          <Header weatherLocation={weather} />
           <Weather weather={weather} />
           <DaysForecast daysForecast={weather} />
           <i className="fas fa-search" onClick={openSearch}></i>
